@@ -1,0 +1,90 @@
+html
+head
+    link(rel="stylesheet" href="/styles.css")
+    script(src="../other.js")
+    body
+     h1.title.headersCentered Welcome to Find a Cookie
+     h2.headersCentered Narrow down your cookie search or add a cookie recipe.
+    ul.list 
+      p Choose one of the following search flows:
+      li.listItems 
+        p 
+          strong GET 
+          | /allCookies
+        div#getAll
+          p 
+          | Method GET 
+          | Route http://localhost:1990/cookies/allCookies 
+          | Headers   
+          | Description Return list of all of the cookies.
+      li.listItems 
+        p 
+          strong POST 
+          | /allCookies
+        div 
+          p 
+          | Method POST 
+          | Route http://localhost1990/cookies/allCookies
+          | Headers   
+          | Description Creates a new cookies for the data provided in the body. 
+      li.listItems 
+        p 
+          strong GET 
+          | /cookiesByName
+        div 
+          p 
+          | Method GET 
+          | Route http://localhost1990/cookies/cookiesByName 
+          | Headers    
+          | Description Return list of all cookies matching name provided.  
+      li.listItems 
+        p 
+          strong Patch 
+          | /cookiesByName
+        div 
+          p 
+          | Method Patch
+          | Route http://localhost1990/cookies/cookiesByName
+          | Headers   
+          | Description Updates part of the cookie associated with the name provided. 
+      li.listItems 
+        p 
+          strong DELETE 
+          | /cookiesByName
+        div 
+          p 
+          | Method DELETE 
+          | Route http://localhost1990/cookies/cookiesByName 
+          | Headers   
+          | Description Deletes the cookie associated with the name provided.
+      li.listItems 
+        p 
+          strong GET 
+          | /cookiesByBatchSize
+        div 
+          p 
+          | Method GET 
+          | Route http://localhost1990/cookies/cookiesByBatchSize
+          | Headers   
+          | Description Gets all cookies matching the provided batch size. 
+      li.listItems 
+        p 
+          strong GET 
+          | /cookiesByType
+        div 
+          p 
+          | Method GET 
+          | Route http://localhost1990/cookies/cookiesByType
+          | Headers   
+          | Description Gets all cookies matching the provided cookie type.
+      li.listItems 
+        p 
+          strong GET 
+          | /cookiesByTags
+        div 
+          p 
+          | Method GET 
+          | Route http://localhost1990/cookies/cookiesByTags
+          | Headers    
+          | Description Gets all cookies matching the provided tags.   
+        
