@@ -12,79 +12,73 @@ head
           strong GET 
           | /allCookies
         div#getAll
-          p 
-          | Method GET 
-          | Route http://localhost:1990/cookies/allCookies 
-          | Headers   
-          | Description Return list of all of the cookies.
+            p Method: GET 
+            p Route: http://localhost:1990/cookies/allCookies 
+            p Headers:   
+            p Description: Return list of all of the cookies.
       li.listItems 
         p 
           strong POST 
           | /allCookies
         div 
-          p 
-          | Method POST 
-          | Route http://localhost1990/cookies/allCookies
-          | Headers   
-          | Description Creates a new cookies for the data provided in the body. 
+            p Method: POST 
+            p Route: http://localhost1990/cookies/allCookies
+            p Headers: Content-Type application/json
+            p Required Fields: { name, description, type, batchSize, tags }
+            p Description: Creates a new cookies for the data provided in the body. 
       li.listItems 
         p 
           strong GET 
           | /cookiesByName
         div 
-          p 
-          | Method GET 
-          | Route http://localhost1990/cookies/cookiesByName 
-          | Headers    
-          | Description Return list of all cookies matching name provided.  
+            p Method: GET 
+            p Route: http://localhost1990/cookies/cookiesByName 
+            p Headers:   
+            p Description: Return list of all cookies matching name provided.  
       li.listItems 
         p 
           strong Patch 
           | /cookiesByName
         div 
-          p 
-          | Method Patch
-          | Route http://localhost1990/cookies/cookiesByName
-          | Headers   
-          | Description Updates part of the cookie associated with the name provided. 
+            p Method: Patch
+            p Route: http://localhost1990/cookies/cookiesByName
+            p Headers: Content-Type application/json
+            p Required Fields: { name, description, type, batchSize, tags }
+            p Description: Updates part of the cookie associated with the name provided. 
       li.listItems 
         p 
           strong DELETE 
           | /cookiesByName
         div 
-          p 
-          | Method DELETE 
-          | Route http://localhost1990/cookies/cookiesByName 
-          | Headers   
-          | Description Deletes the cookie associated with the name provided.
+            p Method: DELETE 
+            p Route: http://localhost1990/cookies/cookiesByName 
+            p Headers:   
+            p Description: Deletes the cookie associated with the name provided.
       li.listItems 
         p 
           strong GET 
           | /cookiesByBatchSize
         div 
-          p 
-          | Method GET 
-          | Route http://localhost1990/cookies/cookiesByBatchSize
-          | Headers   
-          | Description Gets all cookies matching the provided batch size. 
+            p Method: GET 
+            p Route: http://localhost1990/cookies/cookiesByBatchSize
+            p Headers:   
+            p Description: Gets all cookies matching the provided batch size. 
       li.listItems 
         p 
           strong GET 
           | /cookiesByType
         div 
-          p 
-          | Method GET 
-          | Route http://localhost1990/cookies/cookiesByType
-          | Headers   
-          | Description Gets all cookies matching the provided cookie type.
+            p Method: GET 
+            p Route: http://localhost1990/cookies/cookiesByType
+            p Headers:   
+            p Description: Gets all cookies matching the provided cookie type.
       li.listItems 
         p 
           strong GET 
           | /cookiesByTags
         div 
-          p 
-          | Method GET 
-          | Route http://localhost1990/cookies/cookiesByTags
-          | Headers    
-          | Description Gets all cookies matching the provided tags.   
+              p Method: GET 
+              p Route: http://localhost1990/cookies/cookiesByTags
+              p Headers:    
+              p Description: Gets all cookies matching the provided tags.   
         
