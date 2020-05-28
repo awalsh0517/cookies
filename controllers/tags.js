@@ -1,18 +1,22 @@
 const models = require('../models')
 
 const getCookiesByTags = async (request, response) => {
-  const { identifier } = request.params
+  try {
+    const { tag } = request.params
 
-  const cookiesByTag = await models.tags.findAll({
-    include: [{
-      model: models.cookies
-    }],
-    where: { tag: { [models.Op.like]: `%${identifier}%` } },
-  })
+    const cookiesByTag = await models.tags.findAll({
+      include: [{
+        model: models.cookies
+      }],
+      where: { tag },
+    })
 
-  return cookiesByTag
-    ? response.send(cookiesByTag)
-    : response.sendStatus(404)
+    return cookiesByTag
+      ? response.send(cookiesByTag)
+      : response.sendStatus(404)
+  } catch (error) {
+    return response.status(500).send('Unable to retrieve cookie by tag, please try again.')
+  }
 }
 
 module.exports = { getCookiesByTags }

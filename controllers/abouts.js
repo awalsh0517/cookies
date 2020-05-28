@@ -1,27 +1,35 @@
 const models = require('../models')
 
 const aboutCookiesByBatchSize = async (request, response) => {
-  const { identifier } = request.params
+  try {
+    const { batchSize } = request.params
 
-  const batchSize = await models.abouts.findAll({
-    where: { batchSize: { [models.Op.like]: `%${identifier}%` } },
-  })
+    const cookiesBatchSize = await models.abouts.findAll({
+      where: { batchSize }
+    })
 
-  return batchSize
-    ? response.send(batchSize)
-    : response.sendStatus(404)
+    return cookiesBatchSize
+      ? response.send(cookiesBatchSize)
+      : response.sendStatus(404)
+  } catch (error) {
+    return response.status(500).send('Unable to retrieve cookies by batchSize.')
+  }
 }
 
 const aboutCookiesByType = async (request, response) => {
-  const { identifier } = request.params
+  try {
+    const { type } = request.params
 
-  const cookiesByType = await models.abouts.findAll({
-    where: { type: { [models.Op.like]: `%${identifier}%` } },
-  })
+    const cookiesByType = await models.abouts.findAll({
+      where: { type }
+    })
 
-  return cookiesByType
-    ? response.send(cookiesByType)
-    : response.sendStatus(404)
+    return cookiesByType
+      ? response.send(cookiesByType)
+      : response.sendStatus(404)
+  } catch (error) {
+    return response.status(500).send('Unable to retrieve cookies by type.')
+  }
 }
 
 module.exports = { aboutCookiesByBatchSize, aboutCookiesByType }

@@ -1,5 +1,4 @@
 const express = require('express')
-// const cookies = require('./cookies')
 const bodyParser = require('body-parser')
 const {
   cookiesPage, getAllCookies, saveNewCookie, getCookieByNameWithaboutId, deleteCookieByName, patchCookieByName
@@ -20,15 +19,15 @@ app.use(bodyParser.json())
 
 app.post('/api/allCookies', bodyParser.json(), saveNewCookie)
 
-app.get('/api/cookiesByName/:identifier', getCookieByNameWithaboutId)
+app.get('/api/cookiesByName/:name', getCookieByNameWithaboutId)
 
-app.get('/api/cookiesByBatchSize/:identifier', aboutCookiesByBatchSize)
+app.get('/api/cookiesByBatchSize/:batchSize', aboutCookiesByBatchSize)
 
-app.get('/api/CookiesByType/:identifier', aboutCookiesByType)
+app.get('/api/CookiesByType/:type', aboutCookiesByType)
 
-app.get('/api/cookiesByTags/:identifier', getCookiesByTags)
+app.get('/api/cookiesByTags/:tag', getCookiesByTags)
 
-app.patch('/api/cookiesByName/:name', patchCookieByName)
+app.patch('/api/cookiesByName/:id', patchCookieByName)
 
 app.delete('/api/cookiesByName/:name', deleteCookieByName)
 
