@@ -25,7 +25,7 @@
     "env-cmd": "^10.1.0",
     "eslint": "^6.8.0",
     "mocha": "^7.2.0",
-    "nodemon": "^2.0.3",
+    "nodemon": "^2.0.4",
     "pug-lint": "^2.6.0",
     "sinon": "^9.0.2",
     "sinon-chai": "^3.5.0"
