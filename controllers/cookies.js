@@ -1,12 +1,9 @@
-const models = require('../models')
+import models from '../models'
 
-const cookiesPage = async (request, response) => {
-  const api = await models.cookies.findAll()
+export const cookiesPage = async (request, response) => response.render('index')
 
-  return response.render('index', { api })
-}
 
-const getAllCookies = async (request, response) => {
+export const getAllCookies = async (request, response) => {
   try {
     const allCookies = await models.cookies.findAll()
 
@@ -16,7 +13,7 @@ const getAllCookies = async (request, response) => {
   }
 }
 
-const saveNewCookie = async (request, response) => {
+export const saveNewCookie = async (request, response) => {
   try {
     const {
       name, description, aboutId
@@ -36,14 +33,15 @@ const saveNewCookie = async (request, response) => {
   }
 }
 
-const getCookieByNameWithaboutId = async (request, response) => {
+export const getCookieByNameWithaboutId = async (request, response) => {
   try {
     const { name } = request.params
 
     const cookieByNameaboutId = await models.cookies.findOne({
       include: [{
         model: models.abouts
-      }],
+      }, { model: models.tags },
+      ],
       where: { name }
     })
 
@@ -55,7 +53,7 @@ const getCookieByNameWithaboutId = async (request, response) => {
   }
 }
 
-const patchCookieByName = async (request, response) => {
+export const patchCookieNameById = async (request, response) => {
   const { id } = request.params
 
   const { name } = request.body
@@ -69,7 +67,7 @@ const patchCookieByName = async (request, response) => {
   return response.status(201).send('Successfully patched the name item')
 }
 
-const deleteCookieByName = async (request, response) => {
+export const deleteCookieByName = async (request, response) => {
   try {
     const { name } = request.params
     const cookie = await models.cookies.findOne({ where: { name } })
@@ -82,8 +80,4 @@ const deleteCookieByName = async (request, response) => {
   } catch (error) {
     return response.status(500).send('Unable to delete cookie, please try again')
   }
-}
-
-module.exports = {
-  cookiesPage, getAllCookies, saveNewCookie, getCookieByNameWithaboutId, deleteCookieByName, patchCookieByName
 }

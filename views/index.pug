@@ -1,84 +1,84 @@
-html
-head
-    link(rel="stylesheet" href="/styles.css")
-    script(src="../other.js")
-    body
-     h1.title.headersCentered Welcome to Find a Cookie
-     h2.headersCentered Narrow down your cookie search or add a cookie recipe.
-    ul.list 
-      p Choose one of the following search flows:
-      li.listItems 
-        p 
-          strong GET 
-          | /allCookies
-        div#getAll
-            p Method: GET 
-            p Route: http://localhost:1990/cookies/allCookies 
-            p Headers:   
-            p Description: Return list of all of the cookies.
-      li.listItems 
-        p 
-          strong POST 
-          | /allCookies
-        div 
-            p Method: POST 
-            p Route: http://localhost1990/cookies/allCookies
-            p Headers: Content-Type application/json
-            p Required Fields: { name, description, type, batchSize, tags }
-            p Description: Creates a new cookies for the data provided in the body. 
-      li.listItems 
-        p 
-          strong GET 
-          | /cookiesByName
-        div 
-            p Method: GET 
-            p Route: http://localhost1990/cookies/cookiesByName 
-            p Headers:   
-            p Description: Return list of all cookies matching name provided.  
-      li.listItems 
-        p 
-          strong Patch 
-          | /cookiesByName
-        div 
-            p Method: Patch
-            p Route: http://localhost1990/cookies/cookiesByName
-            p Headers: Content-Type application/json
-            p Required Fields: { name, description, type, batchSize, tags }
-            p Description: Updates part of the cookie associated with the name provided. 
-      li.listItems 
-        p 
-          strong DELETE 
-          | /cookiesByName
-        div 
-            p Method: DELETE 
-            p Route: http://localhost1990/cookies/cookiesByName 
-            p Headers:   
-            p Description: Deletes the cookie associated with the name provided.
-      li.listItems 
-        p 
-          strong GET 
-          | /cookiesByBatchSize
-        div 
-            p Method: GET 
-            p Route: http://localhost1990/cookies/cookiesByBatchSize
-            p Headers:   
-            p Description: Gets all cookies matching the provided batch size. 
-      li.listItems 
-        p 
-          strong GET 
-          | /cookiesByType
-        div 
-            p Method: GET 
-            p Route: http://localhost1990/cookies/cookiesByType
-            p Headers:   
-            p Description: Gets all cookies matching the provided cookie type.
-      li.listItems 
-        p 
-          strong GET 
-          | /cookiesByTags
-        div 
-              p Method: GET 
-              p Route: http://localhost1990/cookies/cookiesByTags
-              p Headers:    
-              p Description: Gets all cookies matching the provided tags.   
+//- html
+//- head
+//-     link(rel="stylesheet" href="/styles.css")
+//-     script(src="../other.js")
+//-     body
+//-      h1.title.headersCentered Welcome to Find a Cookie
+//-      h2.headersCentered Narrow down your cookie search or add a cookie recipe.
+//-     ul.list 
+//-       p Choose one of the following search flows:
+//-       li.listItems 
+//-         p 
+//-           strong GET 
+//-           | /cookies
+//-         div#getAll
+//-             p Method: GET 
+//-             p Route: http://localhost:1990/api/cookies
+//-             p Headers:   
+//-             p Description: Return list of all of the cookies.
+//-       li.listItems 
+//-         p 
+//-           strong POST 
+//-           | /cookies
+//-         div 
+//-             p Method: POST 
+//-             p Route: http://localhost:1990/api/cookies
+//-             p Headers: Content-Type application/json
+//-             p Required Fields: { name, description, type, batchSize, tags }
+//-             p Description: Creates a new cookies for the data provided in the body. 
+//-       li.listItems 
+//-         p 
+//-           strong GET 
+//-           | /cookies/name/:name
+//-         div 
+//-             p Method: GET 
+//-             p Route: http://localhost:1990/api/cookies/name/:name
+//-             p Headers:   
+//-             p Description: Return list of all cookies matching name provided.  
+//-       li.listItems 
+//-         p 
+//-           strong Patch 
+//-           | /cookies/:id
+//-         div 
+//-             p Method: Patch
+//-             p Route: http://localhost:1990/api/cookies/:id
+//-             p Headers: Content-Type application/json
+//-             p Required Fields: { name }
+//-             p Description: Updates part of the cookie associated with the name provided. 
+//-       li.listItems 
+//-         p 
+//-           strong DELETE 
+//-           | /cookies/name/:name
+//-         div 
+//-             p Method: DELETE 
+//-             p Route: http://localhost:1990/api/cookies/name/:name 
+//-             p Headers:   
+//-             p Description: Deletes the cookie associated with the name provided.
+//-       li.listItems 
+//-         p 
+//-           strong GET 
+//-           | /cookies/batch/:batchSize
+//-         div 
+//-             p Method: GET 
+//-             p Route: http://localhost:1990/api/cookies/batch/:batchSize
+//-             p Headers:   
+//-             p Description: Gets all cookies matching the provided batch size. 
+//-       li.listItems 
+//-         p 
+//-           strong GET 
+//-           | /cookies/type/:type
+//-         div 
+//-             p Method: GET 
+//-             p Route: http://localhost:1990/api/cookies/type/:type
+//-             p Headers:   
+//-             p Description: Gets all cookies matching the provided cookie type.
+//-       li.listItems 
+//-         p 
+//-           strong GET 
+//-           | /cookies/tags/:tag
+//-         div 
+//-               p Method: GET 
+//-               p Route: http://localhost:1990/api/cookies/tags/:tag
+//-               p Headers:    
+//-               p Description: Gets all cookies matching the provided tags.   
         

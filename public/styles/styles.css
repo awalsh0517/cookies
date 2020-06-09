@@ -1,0 +1,62 @@
+* {
+  background-color: #DDDDDD
+}
+
+.title {
+  color: #502278;
+  font-size: 45px;
+}
+
+.headersCentered {
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.list {
+  list-style: none;
+  font-size: 26px;
+  margin-top: 4rem;
+  margin-left: 7rem;
+}
+
+.listItems {
+  margin-left: 4rem;
+  font-size: 20px;
+}
+
+.listItems strong {
+    color: #502278
+}
+
+.title_react {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.subtitle_react {
+  font-size: 20px;
+}
+
+.page_react {
+  margin: 60px auto 0;
+  text-align: center;
+  width: 60%;
+}
+
+input {
+  border-radius: 8px;
+  font-size: 16px;
+  padding: 5px;
+  margin: 20px 0;
+  outline: none;
+}
+
+.name {
+  font-size: 16px;
+}
+
+.cookie {
+  font-size: 20px;
+  margin-bottom: 10px;
+}

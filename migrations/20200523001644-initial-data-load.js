@@ -11,67 +11,67 @@ module.exports = {
     await queryInterface.bulkInsert('abouts', [
       {
         type: 'roll-out',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'drop',
-        batchSize: '2 dozen',
+        batchSize: '2-dozen',
       }, {
         type: 'drop',
-        batchSize: '4 dozen',
+        batchSize: '4-dozen',
       }, {
         type: 'drop',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'drop',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'sandwich',
-        batchSize: '2 dozen',
+        batchSize: '2-dozen',
       }, {
         type: 'drop',
-        batchSize: '2 dozen',
+        batchSize: '2-dozen',
       }, {
         type: 'pressed',
-        batchSize: '2 dozen',
+        batchSize: '2-dozen',
       }, {
         type: 'imprint',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'drop',
-        batchSize: '1 dozen',
+        batchSize: '1-dozen',
       }, {
         type: 'drop',
-        batchSize: '2 dozen',
+        batchSize: '2-dozen',
       }, {
         type: 'imprint',
-        batchSize: '4 dozen',
+        batchSize: '4-dozen',
       }, {
         type: 'rolled',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'drop',
-        batchSize: '2 dozen',
+        batchSize: '2-dozen',
       }, {
         type: 'sandwich',
-        batchSize: '1 dozen',
+        batchSize: '1-dozen',
       }, {
         type: 'drop',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'drop',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'drop',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'drop',
-        batchSize: '3 dozen',
+        batchSize: '3-dozen',
       }, {
         type: 'sandwich',
-        batchSize: '2 dozen',
+        batchSize: '2-dozen',
       }, {
         type: 'sandwich',
-        batchSize: '1 dozen',
+        batchSize: '1-dozen',
       },
     ])
 

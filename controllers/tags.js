@@ -1,6 +1,6 @@
-const models = require('../models')
+import models from '../models'
 
-const getCookiesByTags = async (request, response) => {
+export const getCookiesByTags = async (request, response) => {
   try {
     const { tag } = request.params
 
@@ -18,5 +18,3 @@ const getCookiesByTags = async (request, response) => {
     return response.status(500).send('Unable to retrieve cookie by tag, please try again.')
   }
 }
-
-module.exports = { getCookiesByTags }

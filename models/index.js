@@ -1,8 +1,8 @@
-const Sequelize = require('sequelize')
-const aboutsModel = require('./abouts')
-const cookiesModel = require('./cookies')
-const cookiesTagsModel = require('./cookiesTags')
-const tagsModel = require('./tags')
+import Sequelize from 'sequelize'
+import aboutsModel from './abouts'
+import cookiesModel from './cookies'
+import cookiesTagsModel from './cookiesTags'
+import tagsModel from './tags'
 
 const connection = new Sequelize('cookiesApi', 'cookies', 'C0ok!#$', {
   host: 'localhost', dialect: 'mysql'
@@ -22,7 +22,7 @@ abouts.hasMany(cookies)
 
 
 
-module.exports = {
+export default {
   Op: Sequelize.Op,
   abouts,
   cookies,

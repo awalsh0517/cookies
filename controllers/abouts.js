@@ -1,10 +1,13 @@
-const models = require('../models')
+import models from '../models'
 
-const aboutCookiesByBatchSize = async (request, response) => {
+export const getCookiesByBatchSize = async (request, response) => {
   try {
     const { batchSize } = request.params
 
     const cookiesBatchSize = await models.abouts.findAll({
+      include: [{
+        model: models.cookies
+      }],
       where: { batchSize }
     })
 
@@ -16,11 +19,14 @@ const aboutCookiesByBatchSize = async (request, response) => {
   }
 }
 
-const aboutCookiesByType = async (request, response) => {
+export const getCookiesByType = async (request, response) => {
   try {
     const { type } = request.params
 
     const cookiesByType = await models.abouts.findAll({
+      include: [{
+        model: models.cookies
+      }],
       where: { type }
     })
 
@@ -31,5 +37,3 @@ const aboutCookiesByType = async (request, response) => {
     return response.status(500).send('Unable to retrieve cookies by type.')
   }
 }
-
-module.exports = { aboutCookiesByBatchSize, aboutCookiesByType }

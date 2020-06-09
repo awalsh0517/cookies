@@ -1,39 +1,38 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const {
-  cookiesPage, getAllCookies, saveNewCookie, getCookieByNameWithaboutId, deleteCookieByName, patchCookieByName
-} = require('./controllers/cookies')
-const { aboutCookiesByBatchSize, aboutCookiesByType } = require('./controllers/abouts')
-const { getCookiesByTags } = require('./controllers/tags')
+import express from 'express'
+import bodyParser from 'body-parser'
+import path from 'path'
+import {
+  cookiesPage, getAllCookies, saveNewCookie, getCookieByNameWithaboutId, deleteCookieByName, patchCookieNameById
+} from './controllers/cookies'
+import { getCookiesByBatchSize, getCookiesByType } from './controllers/abouts'
+import { getCookiesByTags } from './controllers/tags'
 
 const app = express()
 
-app.set('view engine', 'pug')
+// app.set('view engine', 'pug')
 app.use(express.static('public'))
 
-app.get('/api', cookiesPage)
+app.get('/', cookiesPage)
 
-app.get('/api/allCookies', getAllCookies)
+app.get('/api/cookies', getAllCookies)
 
 app.use(bodyParser.json())
 
-app.post('/api/allCookies', bodyParser.json(), saveNewCookie)
+app.post('/api/cookies', bodyParser.json(), saveNewCookie)
 
-app.get('/api/cookiesByName/:name', getCookieByNameWithaboutId)
+app.get('/api/cookies/name/:name', getCookieByNameWithaboutId)
 
-app.get('/api/cookiesByBatchSize/:batchSize', aboutCookiesByBatchSize)
+app.get('/api/cookies/batch/:batchSize', getCookiesByBatchSize)
 
-app.get('/api/CookiesByType/:type', aboutCookiesByType)
+app.get('/api/cookies/type/:type', getCookiesByType)
 
-app.get('/api/cookiesByTags/:tag', getCookiesByTags)
+app.get('/api/cookies/tags/:tag', getCookiesByTags)
 
-app.patch('/api/cookiesByName/:id', patchCookieByName)
+app.patch('/api/cookies/:id', patchCookieNameById)
 
-app.delete('/api/cookiesByName/:name', deleteCookieByName)
+app.delete('/api/cookies/name/:name', deleteCookieByName)
 
-app.all('*', (request, response) => {
-  return response.sendStatus(404)
-})
+app.all('*', (request, response) => response.sendFile(path.resolve(__dirname, 'public', 'index.html')))
 
 app.listen(1990, () => {
   // eslint-disable-next-line no-console
