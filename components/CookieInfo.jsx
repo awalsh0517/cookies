@@ -13,6 +13,6 @@ const Link = styled(NavLink)`
 
 export default ({ id, name }) => (
   <Cookie key={id}>
-    <Link to={`/cookies/name/${id}`}>{`${name}`}</Link>
+    <Link to={`/cookies/name/${name}`}>{`${name}`}</Link>
   </Cookie>
 )

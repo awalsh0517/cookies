@@ -9,6 +9,6 @@ text-align: center;
 
 export default ({ id, name, description, aboutId }) => (
   <Cookie key={id}>
-    {`${name} (${description} ${aboutId})`}
+    {`${name} ${description} ${aboutId}`}
   </Cookie>
 )

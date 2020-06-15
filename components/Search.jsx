@@ -9,6 +9,5 @@ const Input = styled.input`
   outline: none;
 `
 
-export default ({ term, setter }) => (
-  <Input type="text" name="search" value={term} onChange={event => setter(event.target.value)} />
-)
+export default ({ term, handleChange }) =>
+  <Input type="text" name="search" value={term} onChange={handleChange} />
