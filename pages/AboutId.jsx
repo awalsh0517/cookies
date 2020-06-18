@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import GoBack from '../components/GoBack'
-// import Cookie from '../components/Cookie'
-// import About from '../components/About'
-// import Tags from '../components/Tags'
-// import NotFound from '../components/NotFound'
 import Page from '../components/Page'
 import CookieDetails from '../components/CookieDetails'
 import Title from '../components/Title'
@@ -38,7 +34,6 @@ export default () => {
           description={cookie.description}
           type={cookie.about.type}
           batchSize={cookie.about.batchSize}
-        // tags={cookie.tags}
         />
       </>
       }

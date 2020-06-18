@@ -21,12 +21,6 @@ export default ({ name, description, type, batchSize, tags }) => {
       <Details2> {`${description}`}</Details2>
       <Details2> {`Cookie Type: ${type}`}</Details2>
       <Details2> {`Batch Size: ${batchSize}`}</Details2>
-      {/* <Details2> {tags.map(cookieTags => (
-        <Tag
-          tag={cookieTags.tags}
-        />
-      ))}</Details2> */}
-
     </>
   )
 }
